@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <button id="close-btn" class="close-btn">&times;</button>
+        <ul>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+           <li> <a href="{{ url_for('dietplan') }}">Diet Plan</a></li>
+        </ul>
+    </div>
+    <button id="menu-btn" class="menu-btn">&#9776; </button>
+
+
+    <div class="profile-section">
+        <div class="profile-pic">
+            <img src="static/sarah.png" alt="Sara's profile picture">
+        </div>
+        <h2 class="name">Sara</h2>
+        <h3 class="stage">Stage 1</h3>
+    </div>
+
+    <div class="prof-menu-item">
+        <img src="static/logo.png" alt="Account icon">
+        <span>Account</span>
+    </div>
+    <div class="prof-menu-item">
+        <img src="static/logo.png" alt="My records icon">
+        <span>My records</span>
+    </div>
+    <div class="prof-menu-item">
+        <img src="static/logo.png" alt="About icon">
+        <span>About</span>
+    </div>
+    <div class="prof-menu-item">
+        <img src="static/logo.png" alt="Privacy & Policy icon">
+        <span>Privacy & Policy</span>
+    </div>
+     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

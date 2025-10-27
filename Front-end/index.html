@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function navigate() {
+            window.location.href = 'gender.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="info-container">
+        <h1>Required Information</h1>
+        <form action="/predict" method="POST">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" name="height" required>
+                </div>
+                <div class="input-item">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" required>
+                </div>
+            </div>
+
+            <label for="blood_urea">Blood Urea:</label>
+            <input type="number" id="blood_urea" name="blood_urea" required>
+
+            <label for="serum_creatinine">Serum Creatinine:</label>
+            <input type="number" id="serum_creatinine" name="serum_creatinine" step="0.1" required>
+
+            <label for="gfr">GFR:</label>
+            <input type="number" id="gfr" name="gfr" required>
+
+            <button type="submit" class="calculate-button">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>

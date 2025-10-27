@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Gender</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function submitForm() {
+            document.getElementById('genderForm').submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="gender-cont">
+        <div class="ge-content">
+            <h1>What's your gender?</h1>
+            <form id="genderForm" action="required_info.html" method="GET">
+                <div class="options">
+                    <div class="option-fem">
+                        <img src="assets/female.png" alt="Female" onclick="this.parentNode.querySelector('input').click()">
+                        <input type="radio" name="gender" value="female" required onclick="submitForm()">
+                        Female
+                    </div>
+                    <div class="option-mel">
+                        <img src="assets/male.png" alt="Male" onclick="this.parentNode.querySelector('input').click()">
+                        <input type="radio" name="gender" value="male" required onclick="submitForm()">
+                        Male
+                    </div>
+                </div>
+                <button type="submit">NEXT</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

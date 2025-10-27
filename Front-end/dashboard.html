@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <button id="close-btn" class="close-btn">&times;</button>
+        <ul>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+           <li> <a href="{{ url_for('dietplan') }}">Diet Plan</a></li>
+        </ul>
+    </div>
+
+    <button id="menu-btn" class="menu-btn">&#9776; </button>
+
+    <div class="content">
+        <div class="categories">
+            <button class="category-btn active" id="day-btn">Day</button>
+            <button class="category-btn" id="week-btn">Week</button>
+            <button class="category-btn" id="month-btn">Month</button>
+        </div>
+
+        <div class="category-content" id="day-content">
+            <div class="chart-container">
+                <canvas id="ckdProgressChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="mealsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="category-content" id="week-content" style="display:none;">
+            <div class="chart-container">
+                <canvas id="ckdProgressChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="mealsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="category-content" id="month-content">
+
+                <div class="chart-container">
+                    <canvas id="ckdProgressChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="mealsChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+   <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

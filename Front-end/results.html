@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your CKD Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+    <div class="content">
+    <header>
+        <h1>Your CKD Prediction Result</h1>
+    </header>
+
+     <div id="sidebar" class="sidebar">
+        <button id="close-btn" class="close-btn">&times;</button>
+        <ul>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+           <li> <a href="{{ url_for('dietplan') }}">Diet Plan</a></li>
+        </ul>
+    </div>
+
+    <button id="menu-btn" class="menu-btn">&#9776; </button>
+
+            <div>     <h2>Predicted CKD Stage</h2>
+            <p>CKD Stage: <span id="dp-ckd-stage">{{ ckd_stage }}</span></p>
+            <div class="dp-chart-container">
+                <div class="dp-chart-wrapper">
+                    <canvas id="dp-gram-chart"></canvas>
+                </div>
+                <div class="dp-chart-wrapper">
+                    <canvas id="dp-mg-chart"></canvas>
+                </div>
+            </div>
+            <div class="dp-info-box">
+                <h3>Recommended Nutrition Plan:</h3>
+                <ul>
+                    <li><span class="dp-color-code" style="background-color: #4e79a7;"></span>PROTEIN: <span id="dp-protein">{{ nutrition.protein }}</span> g</li>
+                    <li><span class="dp-color-code" style="background-color: #283860;"></span>CARBS: <span id="dp-carbs">{{ nutrition.carbs }}</span> g</li>
+                    <li><span class="dp-color-code" style="background-color: #76b7b2;"></span>FAT: <span id="dp-fat">{{ nutrition.fat }}</span> g</li>
+                    <li><span class="dp-color-code" style="background-color: #f28e2c;"></span>POTASSIUM: <span id="dp-potassium">{{ nutrition.potassium }}</span> mg</li>
+                    <li><span class="dp-color-code" style="background-color: #e15759;"></span>SODIUM: <span id="dp-sodium">{{ nutrition.sodium }}</span> mg</li>
+                    <li><span class="dp-color-code" style="background-color: #ff9da7;"></span>PHOSPHORUS: <span id="dp-phosphorus">{{ nutrition.phosphorus }}</span> mg</li>
+                </ul>
+                <p>Total calories: <span id="dp-total-calories">{{ nutrition.calories }}</span> kcal</p>
+            </div> </div>
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='dp.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
